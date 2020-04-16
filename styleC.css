@@ -1,0 +1,138 @@
+
+body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    grid-template-rows:  1fr 20fr;
+    grid-template-areas: "header header"
+    "content sidebar";
+    background-color: #6f5e5e;
+    height: 100%;
+    width: 100%;
+    grid-gap: 3px;
+
+
+}
+.header {
+    background-color: beige;
+    grid-area: header;
+
+}
+
+.content {
+    background-color: transparent;
+    grid-area: content;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "Week1"
+    "Week2";
+    text-align: center;
+
+}
+
+.sidebar {
+    background-color: transparent;
+    grid-area: sidebar;
+}
+.Week1{
+    display: grid;
+    grid-area: Week1;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "Title"
+"Menu";
+    background-color: transparent;
+
+}
+.Week2{
+    display: grid;
+    grid-area: Week2;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "Title"
+    "Menu";
+    background-color: transparent;
+
+}
+
+.Title{
+    background-color: crimson;
+    grid-area: Title;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    /*grid-template-areas: "Wochentag Wochentag Wochentag Wochentag Wochentag Wochentag Wochentag ";*/
+    border: #3d2e2e solid;
+}
+.Menu{
+    background-color: transparent;
+    grid-area: Menu;
+    display: grid;
+
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Mittag"
+"Abend";
+    grid-gap: 0px;
+}
+
+.Mittag{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-area: Mittag;
+    background-color: transparent;
+    grid-gap: 0px;
+}
+.Abend{
+    grid-area: Abend;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 0px;
+}
+
+.Wochentag{
+    /*grid-area: Wochentag;*/
+    background-color: transparent;
+    z-index: 100;
+    transition: background-color .7s;
+    border: #383030 solid 1px;
+}
+
+div.Wochentag:hover{
+    background-color: crimson;
+}
+
+.einzeln{
+    z-index: 100;
+
+}
+div.einzeln{
+    background: linear-gradient(165deg, gray,transparent);
+    border: #383030 solid 1px;
+
+}
+div.einzeln:hover{
+    transform: scale(1.03);
+}
+button{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    font-size: large;
+}
+
+.button:active {
+    background-color: #FFFFFF;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
